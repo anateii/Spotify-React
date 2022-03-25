@@ -12,7 +12,7 @@ const MySideBar = () => {
         src={spotifyLogo}
         alt=""
       ></img>
-      <div id="verticalMenu" className="text-light ml-3">
+      <div id="verticalMenu" className="text-light ml-3 mt-3">
         <div className="row-wrapper">
           <div className="inline col-12">
             <svg
@@ -66,7 +66,7 @@ const MySideBar = () => {
         </div>
       </div>
 
-      <div className="container-wrapper text-light">
+      <div className="container-wrapper text-light mt-2">
         <div className="row-wrapper">
 
             <div className="col-12 " >
