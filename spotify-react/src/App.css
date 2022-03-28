@@ -310,7 +310,7 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom:0px;
-  margin-top: 30px;
+  margin-top: 40px;
   }
   
   .titles h3 {
@@ -325,7 +325,7 @@ main {
   margin-bottom:0px;
   }
   
-  .titles h5 {
+  .titles h6 {
   margin-right:27px;
   color:rgba(255, 255, 255, 0.671);
   margin-bottom:0px;
@@ -337,7 +337,8 @@ main {
   
   .titles + p {
   margin-left: 27px;
-  color:rgba(255, 255, 255, 0.671)
+  color:rgba(255, 255, 255, 0.671);
+  text-align: start;
   }
 
   .column {
@@ -363,3 +364,70 @@ main {
   .column:not(:hover) {
     filter: blur(0px);
   }
+
+  /*SECOND AND THIRD ROW*/
+  .some-page-wrapper {
+    margin: 20px;
+    background-color: transparent;
+    }
+    
+    .some-page-wrapper .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    }
+    
+    .some-page-wrapper .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    
+    background: rgba(30, 30, 30, 0.63);
+        border-radius: 7px !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+       
+       /*  -webkit-backdrop-filter: blur(5.2px); */
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin:0px 7px;
+    }
+    
+    .blue-column {
+    background-color: transparent;
+    height: 200px;
+    width:100%;
+    }
+    
+    .blue-column img {
+    height: 110px;
+     width: 100%; 
+     object-fit: cover; 
+    box-shadow: 0px 12px 18px -9px rgba(0, 0, 0, 0.82);
+    border-radius: 3px;
+    }
+    
+    .blue-column p {
+    margin-top: 25px;
+    font-weight: 700 ;
+    color:white;
+    text-align: start;
+    }
+    
+    @media (max-width:425px) {
+    .some-page-wrapper .row{
+      width:100vh;
+      flex-direction:column;
+    }
+    }
+    @media (max-width:1024px) {
+    .some-page-wrapper .column {
+      flex-basis: 0%;
+      flex:none;
+      margin: 5px 7px;
+    }
+    }
