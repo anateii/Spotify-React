@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import "../App.css"
+import SongComponent from "./SongComponent"
+
+
+
 
 const AlbumPage = () => {
   const [album, setAlbum] = useState({});
@@ -41,10 +45,11 @@ const AlbumPage = () => {
           <Col>
             <Card id="album-card">
               <Card.Img variant="top" src={album.cover_big} />
-              <Card.Body>
+              <Card.Body id="album-card-body">
                 <Card.Title>{album.title}</Card.Title>
-                <Card.Text>
+                <Card.Text id="album-card-text">
                 {album.artist ? album.artist.name : ""}
+                <img src={album.artist ? album.artist.picture : ""} alt="" />
                 </Card.Text>
                
               </Card.Body>
@@ -52,6 +57,17 @@ const AlbumPage = () => {
           </Col>
         </Row>
       </Container>
+      <Row>
+            <div className="col-md-10 mb-5" id="trackList">
+              {songs.map((song) => (
+                <SongComponent
+                  track={song}
+                  key={song.id}
+                  albumCover={album.cover}
+                />
+              ))}
+            </div>
+          </Row>
     </main>
   );
 };

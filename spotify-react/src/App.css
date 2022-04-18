@@ -485,6 +485,31 @@ main {
 
     #album-card > .card-img-top {
       background-color: none;
-      width: 65%;
+      width: 400px;
       
+    }
+
+#album-card-body {
+  min-width: fit-content;
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#album-card-text {
+  display:flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+#album-card-body > .card-title  {
+  font-size: 3rem;
+  text-align: initial;
+}
+
+#album-card-text >img {
+      border-radius: 50%;
+    width:40px;
     }

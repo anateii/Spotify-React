@@ -25,7 +25,7 @@ const SearchPage = () => {
   const fetchSongs = async () => {
     const response = await fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        (query || "lofi")
+        (query || "acraze")
     );
 
     if (response.ok) {

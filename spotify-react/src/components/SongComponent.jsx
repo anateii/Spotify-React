@@ -1,7 +1,7 @@
 
-const SongComponent = (props) => {
+const SongComponent = ({track}) => {
   return (
-<h1>hELLO</h1>
+<h1>{track.title}</h1>
    
   );
 };
