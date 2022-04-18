@@ -14,15 +14,15 @@ function App() {
     <div className="App">
      
      <BrowserRouter>
-    {/*  <MyNavbar />
-     <MySideBar/>  */}
+      <MyNavbar />
+     <MySideBar/> 
      <Routes>
-       <Route path="/homepage" element={<HomePage />} />
-       <Route path="/album-page" element={<AlbumPage />} />
-       <Route path="/artist-page" element ={<ArtistPage />} />
-       <Route path="/search" element={<SearchPage />} />
+       <Route path="/" element={<SearchPage />} />
+       <Route path="/album-page/:id" element={<AlbumPage />} />
+       <Route path="/artist-page/:id" element ={<ArtistPage />} />
+       <Route path="/home-page" element={<HomePage />} />
      </Routes>
-   {/*   <MyFooter />  */}
+     <MyFooter /> 
      </BrowserRouter>
     </div>
   );

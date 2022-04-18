@@ -3,15 +3,11 @@ import cover1 from "../assets/cover1.png";
 import cover2 from "../assets/cover 2.png";
 import cover3 from "../assets/cover3.png";
 import cover4 from "../assets/cover4.png";
-import MyNavbar from "./MyNavbar";
-import MySideBar from "./MySideBar";
-import MyFooter from "./MyFooter";
+
 
 const HomePage = () => {
   return (
     <div>
-      <MyNavbar/>
-      <MySideBar/>
       <main>
         <div className="titles">
           <h1>Good morning</h1>
@@ -138,7 +134,7 @@ const HomePage = () => {
           </div>
         </div>
       </main>
-      <MyFooter/>
+     
     </div>
   );
 };
