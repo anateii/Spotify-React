@@ -1,18 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import "../App.css"
-import SongComponent from "./SongComponent"
-
-
-
+import "../App.css";
+import SongComponent from "./SongComponent";
 
 const AlbumPage = () => {
   const [album, setAlbum] = useState({});
   const [songs, setSongs] = useState([]);
 
   const params = useParams();
- 
 
   const getAlbum = async () => {
     let albumId = params.id;
@@ -39,7 +35,6 @@ const AlbumPage = () => {
 
   return (
     <main>
-      
       <Container>
         <Row className="mt-5">
           <Col>
@@ -48,26 +43,25 @@ const AlbumPage = () => {
               <Card.Body id="album-card-body">
                 <Card.Title>{album.title}</Card.Title>
                 <Card.Text id="album-card-text">
-                {album.artist ? album.artist.name : ""}
-                <img src={album.artist ? album.artist.picture : ""} alt="" />
+                  {album.artist ? album.artist.name : ""}
+                  <img src={album.artist ? album.artist.picture : ""} alt="" />
                 </Card.Text>
-               
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-      <Row>
-            <div className="col-md-10 mb-5" id="trackList">
-              {songs.map((song) => (
-                <SongComponent
-                  track={song}
-                  key={song.id}
-                  albumCover={album.cover}
-                />
-              ))}
-            </div>
-          </Row>
+      <Container className="mt-5">
+        <Row>
+          {songs.map((song) => (
+            <SongComponent
+              track={song}
+              key={song.id}
+              albumCover={album.cover}
+            />
+          ))}
+        </Row>
+      </Container>
     </main>
   );
 };
