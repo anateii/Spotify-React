@@ -7,6 +7,9 @@ const SearchPage = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchSongs();

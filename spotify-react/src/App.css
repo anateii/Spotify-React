@@ -227,6 +227,14 @@ main {
   top: 50px;
   left: 300px;
   background-color: transparent;
+  height: 100%;
+  overflow: auto;
+
+}
+
+main::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
 }
 
 /*FIRST ROW*/
@@ -498,11 +506,14 @@ main {
   align-items: center;
   gap: 5px;
   justify-content: flex-end;
+  font-weight: 600;
+    color: #181818bf;
 }
 
 #album-card-body > .card-title {
   font-size: 3rem;
   text-align: initial;
+  max-width:fit-content;
 }
 
 #album-card-text > img {
@@ -519,19 +530,30 @@ main {
 .playlist-info:hover {
   background-color: transparent !important;
 }
-#playlist-column {
+#playlist-column , #playlist-info{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 7px;
+  padding-top:7px;
  
+}
+
+#playlist-info{
+  border-bottom: #181818;
+}
+
+#playlist-info:hover{
+  color:#181818;
 }
 
 #playlist-column:hover {
   background: rgba(59, 38, 37, 0.61);
   border-radius: 3px;
-  box-shadow: 5px 6px 15px -3px rgba(26, 26, 26, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 10px 20px 15px -3px rgba(26, 26, 26, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
 }
 
 #playlist-time {
@@ -555,10 +577,12 @@ main {
   color:#181818;
   width: max-content;
   margin-top: 0px;
+  margin-bottom: 0px;;
 }
 
 #playlist-song:hover {
   color: white;
+  cursor:pointer;
 }
 
 #playlist-song h5 {

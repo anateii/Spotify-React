@@ -43,7 +43,7 @@ const AlbumPage = () => {
               <Card.Body id="album-card-body">
                 <Card.Title>{album.title}</Card.Title>
                 <Card.Text id="album-card-text">
-                  {album.artist ? album.artist.name : ""}
+                  {album.artist ? album.artist.name : ""} · {album.nb_tracks ? album.nb_tracks : ""} songs
                   <img src={album.artist ? album.artist.picture : ""} alt="" />
                 </Card.Text>
               </Card.Body>
@@ -53,7 +53,9 @@ const AlbumPage = () => {
       </Container>
       <Container className="mt-5">
         <Row>
-          {songs.map((song) => (
+          {
+         
+          songs.map((song) => (
             <SongComponent
               track={song}
               key={song.id}
