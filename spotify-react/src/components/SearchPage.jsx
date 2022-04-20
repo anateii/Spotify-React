@@ -22,6 +22,7 @@ const SearchPage = () => {
 
   useEffect(() => {
   fetchSongs(query)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
 

@@ -591,3 +591,36 @@ main::-webkit-scrollbar {
 #playlist-time .bi {
   margin: auto;
 }
+
+
+
+/*ARTIST PAGE*/
+
+#artist-col{
+display: flex;
+flex-direction: row;
+column-gap: 2rem;
+}
+
+
+#artist-img {
+  border-radius: 50%;
+  box-shadow: 0px 12px 18px -9px rgba(0, 0, 0, 0.82);
+  width:300px;
+}
+
+#artist-img + div {
+  align-self: flex-end;
+}
+
+#artist-img + div> h5 {
+  margin-top:30px;
+  font-size: 5rem;
+  text-align: start;
+    margin-bottom: 0;
+}
+
+#artist-img + div>p {
+  text-align: start;
+}
+
