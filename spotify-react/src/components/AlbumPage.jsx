@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import "../App.css";
@@ -20,6 +20,7 @@ const AlbumPage = () => {
 
       if (response.ok) {
         let album = await response.json();
+        console.log("this is album with artist id", album.artist.id);
         setAlbum(album);
         setSongs(album.tracks.data);
       }
@@ -43,7 +44,8 @@ const AlbumPage = () => {
               <Card.Body id="album-card-body">
                 <Card.Title>{album.title}</Card.Title>
                 <Card.Text id="album-card-text">
-                  {album.artist ? album.artist.name : ""} · {album.nb_tracks ? album.nb_tracks : ""} songs
+                  {album.artist ? album.artist.name : ""} ·
+                  {album.nb_tracks ? album.nb_tracks : ""} songs
                   <img src={album.artist ? album.artist.picture : ""} alt="" />
                 </Card.Text>
               </Card.Body>
@@ -53,9 +55,7 @@ const AlbumPage = () => {
       </Container>
       <Container className="mt-5">
         <Row>
-          {
-         
-          songs.map((song) => (
+          {songs.map((song) => (
             <SongComponent
               track={song}
               key={song.id}

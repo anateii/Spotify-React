@@ -29,12 +29,12 @@ const SearchPage = () => {
   const fetchSongs = async () => {
     const response = await fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        (query || "acraze")
+        (query || "pixies")
     );
 
     if (response.ok) {
       const { data } = await response.json();
-      console.log(data);
+
       setResults(data);
     }
   };
@@ -71,7 +71,7 @@ const SearchPage = () => {
                 </Card>
               </Col>
             ))
-            .splice(0, 9)}
+           .slice(0,12)}
         </Row>
       </Container>
     </main>

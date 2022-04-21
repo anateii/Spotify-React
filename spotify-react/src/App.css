@@ -547,7 +547,7 @@ main::-webkit-scrollbar {
   color:#181818;
 }
 
-#playlist-column:hover {
+#playlist-column:hover{
   background: rgba(59, 38, 37, 0.61);
   border-radius: 3px;
   box-shadow: 10px 20px 15px -3px rgba(26, 26, 26, 0.1);
@@ -556,11 +556,19 @@ main::-webkit-scrollbar {
 
 }
 
+
+
 #playlist-time {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color:#181818;
+}
+
+.bi-heart {
+  transform: none;
+  margin-top:0.2rem;
+  display: none;
 }
 
 #playlist-hash {
@@ -618,9 +626,12 @@ column-gap: 2rem;
   font-size: 5rem;
   text-align: start;
     margin-bottom: 0;
+   
 }
 
 #artist-img + div>p {
   text-align: start;
+  font-weight: 600;
+  color: #181818bf;
 }
 

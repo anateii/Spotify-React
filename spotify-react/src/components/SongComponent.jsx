@@ -1,6 +1,7 @@
 import { Col } from "react-bootstrap";
 
 const SongComponent = ({ track }) => {
+
   function secondsToTimestamp(seconds) {
     let minutes = Math.floor(seconds / 60);
     let remainingSeconds = seconds % 60;
@@ -9,6 +10,8 @@ const SongComponent = ({ track }) => {
       remainingSeconds < 10 ? "0" : ""
     }${remainingSeconds}`;
   }
+
+
 
   return (
 
@@ -22,6 +25,7 @@ const SongComponent = ({ track }) => {
 
             <h5 id="playlist-song">{track.title}</h5>
           </div>
+          <i className="bi bi-heart"></i>
           <span id="playlist-time" className="mx-5"> {secondsToTimestamp(track.duration)}</span>
         </div>
       </div>
