@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AlbumPage from './components/AlbumPage';
 import ArtistPage from "./components/ArtistPage";
 import HomePage from './components/HomePage';
-import MyFooter from './components/MyFooter';
+import Player from './components/Player';
 import SearchPage from './components/SearchPage';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
        <Route path="/artist-page/:id" element ={<ArtistPage />} />
        <Route path="/home-page" element={<HomePage />} />
      </Routes>
-     <MyFooter /> 
+     <Player /> 
      </BrowserRouter>
     </div>
   );

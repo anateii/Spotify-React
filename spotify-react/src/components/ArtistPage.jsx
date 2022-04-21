@@ -51,7 +51,7 @@ const ArtistPage = () => {
               <img src={artist.picture_big} id="artist-img" alt="" />
              <div>
                   <h5>{artist.name}</h5>
-                  <p>{artistFans} fans - {artist.nb_album} albums</p>
+                  <p>{artistFans} fans · {artist.nb_album} albums</p>
              </div>
 
          </Col>

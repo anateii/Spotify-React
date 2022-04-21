@@ -1,9 +1,17 @@
 .App {
   text-align: center;
-  background: #9796f0;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #9796f0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fbc7d4,
+    #9796f0
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   overflow-x: hidden;
   background-attachment: fixed;
   height: 100%;
@@ -229,7 +237,6 @@ main {
   background-color: transparent;
   height: 100%;
   overflow: auto;
-
 }
 
 main::-webkit-scrollbar {
@@ -507,13 +514,13 @@ main::-webkit-scrollbar {
   gap: 5px;
   justify-content: flex-end;
   font-weight: 600;
-    color: #181818bf;
+  color: #181818bf;
 }
 
 #album-card-body > .card-title {
   font-size: 3rem;
   text-align: initial;
-  max-width:fit-content;
+  max-width: fit-content;
 }
 
 #album-card-text > img {
@@ -530,67 +537,76 @@ main::-webkit-scrollbar {
 .playlist-info:hover {
   background-color: transparent !important;
 }
-#playlist-column , #playlist-info{
+#playlist-column,
+#playlist-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 7px;
-  padding-top:7px;
- 
+  padding-top: 7px;
 }
 
-#playlist-info{
+#playlist-info {
   border-bottom: #181818;
 }
 
-#playlist-info:hover{
-  color:#181818;
+#playlist-info:hover {
+  color: #181818;
 }
 
-#playlist-column:hover{
+#playlist-column:hover {
   background: rgba(59, 38, 37, 0.61);
   border-radius: 3px;
   box-shadow: 10px 20px 15px -3px rgba(26, 26, 26, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
 }
-
-
 
 #playlist-time {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color:#181818;
+  color: #181818;
 }
 
-.bi-heart {
+#heart-wrapper {
+  margin-top: 0.3rem;
+}
+
+#outlined {
   transform: none;
-  margin-top:0.2rem;
-  display: none;
+  margin-top: 0.4rem;
+  color: #181818;
+}
+
+#outlined:hover {
+  color: #1fdf64;
+}
+
+#filled {
+  color: #1fdf64;
 }
 
 #playlist-hash {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color:#181818;
+  color: #181818;
 }
 
 #playlist-song {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color:#181818;
+  color: #181818;
   width: max-content;
   margin-top: 0px;
-  margin-bottom: 0px;;
+  margin-bottom: 0px;
 }
 
 #playlist-song:hover {
   color: white;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #playlist-song h5 {
@@ -600,38 +616,86 @@ main::-webkit-scrollbar {
   margin: auto;
 }
 
-
-
 /*ARTIST PAGE*/
 
-#artist-col{
-display: flex;
-flex-direction: row;
-column-gap: 2rem;
+#artist-col {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
 }
-
 
 #artist-img {
   border-radius: 50%;
   box-shadow: 0px 12px 18px -9px rgba(0, 0, 0, 0.82);
-  width:300px;
+  width: 300px;
 }
 
 #artist-img + div {
   align-self: flex-end;
 }
 
-#artist-img + div> h5 {
-  margin-top:30px;
+#artist-img + div > h5 {
+  margin-top: 30px;
   font-size: 5rem;
   text-align: start;
-    margin-bottom: 0;
-   
+  margin-bottom: 0;
 }
 
-#artist-img + div>p {
+#artist-img + div > p {
   text-align: start;
   font-weight: 600;
   color: #181818bf;
 }
 
+/*PLAYER*/
+
+.bg-container {
+  height: 5.5rem;
+  background-color: #282828;
+}
+
+img[alt="player-cover"] {
+  width: 70px;
+}
+
+#player-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: "white";
+}
+
+#player-text > div {
+  color: white;
+  text-align: left;
+}
+
+#player-text > div:nth-child(1) {
+  font-size: 0.9em;
+}
+
+#player-text > div:nth-child(2) {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.704);
+}
+
+#player-heart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  align-self: center;
+}
+
+.bi {
+  transform: none;
+}
+
+.bi-pip,
+#player-outlined {
+  color: white;
+}
+
+.playerControls .row {
+  justify-content: space-between;
+}
