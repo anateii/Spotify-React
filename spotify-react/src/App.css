@@ -687,6 +687,14 @@ img[alt="player-cover"] {
   align-self: center;
 }
 
+#player-outlined:hover {
+  color:#1fdf64
+}
+
+.bi-heart-fill {
+  color:#1fdf64;
+}
+
 .bi {
   transform: none;
 }
@@ -697,5 +705,36 @@ img[alt="player-cover"] {
 }
 
 .playerControls .row {
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 2em;
+}
+
+#progress {
+  color: white;
+  background-color: #4e4e4e;
+  height: 4px;
+}
+
+.playBar p {
+  margin-bottom: 20px;
+  color: white;
+}
+
+ .bi-skip-start-fill,  .bi-skip-end-fill {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.bi-play-circle-fill {
+  font-size: 2.5em;
+}
+
+.bi-shuffle, .bi-arrow-repeat {
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

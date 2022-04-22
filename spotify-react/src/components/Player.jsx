@@ -32,38 +32,58 @@ const Player = ({
                 <div>{currentSong.data.artist.name}</div>
               </Col>
               <Col sm={2} id="player-heart">
-                <i className="bi bi-heart" id="player-outlined"></i>
+                {currentSong.data?.id && (
+                  <i
+                    className={
+                      likedSongs.elements.find((s) => s === currentSong.data.id)
+                        ? "bi bi-heart-fill"
+                        : "bi bi-heart"
+                    }
+                    onClick={() =>
+                      likedSongs.elements.find((s) => s === currentSong.data.id)
+                        ? removeFromFavourites(currentSong.data.id)
+                        : addToFavourites(currentSong.data.id)
+                    }
+                    id="player-outlined"
+                  ></i>
+                )}
                 <i class="bi bi-pip"></i>
               </Col>
             </Row>
           )}
-        </Col>  
+        </Col>
         <Col sm={6} className="playerControls mt-1">
-        <Row className="justify-space-between mx-5" style={{color: "white"}}>
-        <i class="bi bi-shuffle"></i>
-        <i class="bi bi-skip-start-fill"></i>
-        <i class="bi bi-play-circle-fill"></i>
-        <i class="bi bi-skip-end-fill"></i>
-        <i class="bi bi-arrow-repeat"></i>
-        </Row>
-        <Row className="justify-content-center playBar py-3">
-          <div className="col-8 col-md-6">
-            <div id="progress">
-              <div
-                className="progress-bar"
-                role="progressbar"
-                aria-valuenow={0}
-                aria-valuemin={0}
-                aria-valuemax={100}
-              ></div>
+          <Row
+            className="justify-space-between mx-5"
+            style={{ color: "white" }}
+          >
+            <i className="bi bi-shuffle"></i>
+            <i className="bi bi-skip-start-fill"></i>
+            <i className="bi bi-play-circle-fill"></i>
+            <i className="bi bi-skip-end-fill"></i>
+            <i className="bi bi-arrow-repeat"></i>
+          </Row>
+          <Row className="justify-content-center playBar">
+            <div className="col-8 col-md-6">
+              <div id="progress">
+                <div
+                  className="progress-bar"
+                  role="progressbar"
+                  aria-valuenow={0}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                ></div>
+              </div>
             </div>
-          </div>
-        </Row>
-      </Col>
+          </Row>
+        </Col>
+        <Col sm={3} className="playerLeftControls mt-1">
+          <Row>
+          <i class="bi bi-view-list"></i>
+          <i class="bi bi-speaker"></i>
+          </Row>
+        </Col>
       </Row>
-    
-
-
     </div>
   );
 };
