@@ -79,7 +79,7 @@ const MySideBar = () => {
 
             <div className="col-12 mt-3" > 
                     <img className="plus" src={hearthIcon} alt=""/>
-                    <span>Liked Songs</span>
+                    <span><Link to="/liked-playlist" id="liked-songs">Liked Songs</Link></span>
                
             </div>
         </div>

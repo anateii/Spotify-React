@@ -8,6 +8,7 @@ import ArtistPage from "./components/ArtistPage";
 import HomePage from './components/HomePage';
 import Player from './components/Player';
 import SearchPage from './components/SearchPage';
+import LikedPlaylist from './components/LikedPlaylist';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
        <Route path="/album-page/:id" element={<AlbumPage />} />
        <Route path="/artist-page/:id" element ={<ArtistPage />} />
        <Route path="/home-page" element={<HomePage />} />
+       <Route path="/liked-playlist" element={<LikedPlaylist/>} />
      </Routes>
      <Player /> 
      </BrowserRouter>

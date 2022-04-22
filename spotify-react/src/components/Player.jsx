@@ -1,15 +1,15 @@
 import "../App.css";
-import cover1 from "../assets/cover1.png";
 import { Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
 import {
   addToFavouritesAction,
   removeFromFavouritesAction,
 } from "../redux/actions";
+import { useState } from "react";
 
 const mapDispatchToProps = (dispatch) => ({
-  addToFavourites: (id) => dispatch(addToFavouritesAction(id)),
-  removeFromFavourites: (id) => dispatch(removeFromFavouritesAction(id)),
+  addToFavourites: (index) => dispatch(addToFavouritesAction(index)),
+  removeFromFavourites: (index) => dispatch(removeFromFavouritesAction(index)),
 });
 
 const Player = ({
@@ -18,6 +18,18 @@ const Player = ({
   addToFavourites,
   removeFromFavourites,
 }) => {
+
+const [isActive, setActive] = useState(true)
+
+
+
+
+const handlePlay = () => {
+setActive(!isActive);
+}
+
+
+
   return (
     <div className="container-fluid fixed-bottom bg-container" id="player">
       <Row className="pt-2">
@@ -59,7 +71,11 @@ const Player = ({
           >
             <i className="bi bi-shuffle"></i>
             <i className="bi bi-skip-start-fill"></i>
-            <i className="bi bi-play-circle-fill"></i>
+          { isActive ? 
+           <i className="bi bi-play-circle-fill" onClick={handlePlay}></i>
+          : <i class="bi bi-pause-circle-fill" onClick={handlePlay}></i>} 
+        {/*   < i className ={
+            isActive? "bi bi-ppl-circle-fill" : "bi bi-pause-circle-fill"} onClick={handlePlay}></i> */}
             <i className="bi bi-skip-end-fill"></i>
             <i className="bi bi-arrow-repeat"></i>
           </Row>
@@ -77,12 +93,15 @@ const Player = ({
             </div>
           </Row>
         </Col>
-        <Col sm={3} className="playerLeftControls mt-1">
-          <Row>
-          <i class="bi bi-view-list"></i>
-          <i class="bi bi-speaker"></i>
+        <Col sm={3} className="playerRightControls mt-1">
+          <Row className="justify-space-between mx-5">
+          <i class="bi bi-mic"></i>
+            <i class="bi bi-view-list"></i>
+            <i class="bi bi-speaker"></i>
+            <i class="bi bi-volume-mute"></i>
           </Row>
         </Col>
+      
       </Row>
     </div>
   );
