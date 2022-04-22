@@ -8,8 +8,8 @@ import {
 import { useState } from "react";
 
 const mapDispatchToProps = (dispatch) => ({
-  addToFavourites: (index) => dispatch(addToFavouritesAction(index)),
-  removeFromFavourites: (index) => dispatch(removeFromFavouritesAction(index)),
+  addToFavourites: (id) => dispatch(addToFavouritesAction(id)),
+  removeFromFavourites: (id) => dispatch(removeFromFavouritesAction(id)),
 });
 
 const Player = ({
@@ -20,6 +20,7 @@ const Player = ({
 }) => {
 
 const [isActive, setActive] = useState(true)
+
 
 
 
@@ -45,19 +46,12 @@ setActive(!isActive);
               </Col>
               <Col sm={2} id="player-heart">
                 {currentSong.data?.id && (
-                  <i
-                    className={
-                      likedSongs.elements.find((s) => s === currentSong.data.id)
-                        ? "bi bi-heart-fill"
-                        : "bi bi-heart"
-                    }
-                    onClick={() =>
-                      likedSongs.elements.find((s) => s === currentSong.data.id)
-                        ? removeFromFavourites(currentSong.data.id)
-                        : addToFavourites(currentSong.data.id)
-                    }
+               <i className=" bi bi-heart"
+                    onClick={() => addToFavourites(currentSong.data) }
                     id="player-outlined"
-                  ></i>
+                  ></i> 
+                 
+                 
                 )}
                 <i class="bi bi-pip"></i>
               </Col>

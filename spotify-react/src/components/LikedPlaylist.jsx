@@ -3,13 +3,34 @@ import { Container, Row, Col } from "react-bootstrap";
 import liked from "../assets/hearth.png";
 import me from "../assets/thechild.jpg";
 import { useSelector, useDispatch } from "react-redux";
+import { removeFromFavouritesAction } from "../redux/actions";
 
 
 
 const LikedPlaylist = () => {
 
     const likedSongs = useSelector(state=> state.likedSongs.elements)
-console.log(likedSongs)
+    //console.log("THIS IS CURRENT SONG", likedSongs)
+    
+    const dispatch= useDispatch()
+
+    function secondsToTimestamp(seconds) {
+        let minutes = Math.floor(seconds / 60);
+        let remainingSeconds = seconds % 60;
+    
+        return `${minutes < 10 ? "0" : ""}${minutes}:${
+          remainingSeconds < 10 ? "0" : ""
+        }${remainingSeconds}`;
+      }
+
+
+
+
+
+
+
+
+
 
   return (
     <main>
@@ -28,7 +49,7 @@ console.log(likedSongs)
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className="mt-5">
         <Row>
          {likedSongs.map((element, i)=>(<Col sm={12} className="px-0">
               <div className="row mx-2" id="tracklist" key={i}>
@@ -40,9 +61,11 @@ console.log(likedSongs)
                     <span id="playlist-hash">#</span>
                     <h5 id="playlist-song">{element.title}</h5>
                   </div>
-
+                <div id="heart-wrapper">
+                <i className="bi bi-heart-fill" id="filled" onClick={()=>dispatch(removeFromFavouritesAction(element))}></i>
+                </div>
                   <span id="playlist-time" className="mx-5">
-                    00:00
+                  {secondsToTimestamp(element.duration)}
                   </span>
                 </div>
               </div>
