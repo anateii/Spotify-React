@@ -49,7 +49,7 @@ const LikedPlaylist = () => {
           </Col>
         </Row>
       </Container>
-      <Container className="mt-5">
+      <Container className="mt-">
         <Row>
          {likedSongs.map((element, i)=>(<Col sm={12} className="px-0">
               <div className="row mx-2" id="tracklist" key={i}>
