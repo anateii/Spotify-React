@@ -29,12 +29,14 @@ const SearchPage = () => {
   const fetchSongs = async () => {
     const response = await fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-        (query || "pixies")
+        (query || "drake")
     );
 
     if (response.ok) {
       const { data } = await response.json();
-
+      /* console.log("SONG ALBUM ID", data) */
+      const newData = Array.from(new Set(data.map(JSON.stringify))).map(JSON.parse);
+console.log("NEW DATA", newData);
       setResults(data);
     }
   };
@@ -53,9 +55,10 @@ const SearchPage = () => {
         <Row>
           {results
             .map((song) => (
-              <Col md={3} className="my-4">
+              <Col md={3} className="my-4" key={song.id}>
                 <Card id="search-card">
                   <Card.Img variant="top" src={song.album.cover_big} />
+                 
                   <Card.Body>
                    <Link to={`/album-page/${song.album.id}`}>
                       <Card.Title>

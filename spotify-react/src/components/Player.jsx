@@ -53,7 +53,7 @@ setActive(!isActive);
                  
                  
                 )}
-                <i class="bi bi-pip"></i>
+                <i className="bi bi-pip"></i>
               </Col>
             </Row>
           )}
@@ -67,7 +67,7 @@ setActive(!isActive);
             <i className="bi bi-skip-start-fill"></i>
           { isActive ? 
            <i className="bi bi-play-circle-fill" onClick={handlePlay}></i>
-          : <i class="bi bi-pause-circle-fill" onClick={handlePlay}></i>} 
+          : <i className="bi bi-pause-circle-fill" onClick={handlePlay}></i>} 
         {/*   < i className ={
             isActive? "bi bi-ppl-circle-fill" : "bi bi-pause-circle-fill"} onClick={handlePlay}></i> */}
             <i className="bi bi-skip-end-fill"></i>
@@ -89,10 +89,10 @@ setActive(!isActive);
         </Col>
         <Col sm={3} className="playerRightControls mt-1">
           <Row className="justify-space-between mx-5">
-          <i class="bi bi-mic"></i>
-            <i class="bi bi-view-list"></i>
-            <i class="bi bi-speaker"></i>
-            <i class="bi bi-volume-mute"></i>
+          <i className="bi bi-mic"></i>
+            <i className="bi bi-view-list"></i>
+            <i className="bi bi-speaker"></i>
+            <i className="bi bi-volume-mute"></i>
           </Row>
         </Col>
       
